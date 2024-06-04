@@ -6,7 +6,8 @@ authors = ["Caique Godoy <caiquecgodoy@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11.5"
+python = "==3.11.5"
+apache-airflow = "^2.9.1"
 
 
 [build-system]
