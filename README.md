@@ -12,3 +12,4 @@
     b - poerty env use [version]
     c - poetry shell
 6 - Git add, commit e push
+6 - airflow (dbtu__N7DimIKSh5xC2CFPfz22EPtioxxqCMKIbrSYOzT9kqAi5FOLs)
