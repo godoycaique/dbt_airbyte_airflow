@@ -1,1 +1,1 @@
-# dbt_jornada
+# dbt_jornada DBT Core
