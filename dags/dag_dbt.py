@@ -5,7 +5,7 @@ from datetime import datetime
 
 
 DBT_CLOUD_CONN_ID = 'dbt-connection'
-JOB_ID = '650808'
+JOB_ID = '70403103937984'
 
 @dag(
     start_date=datetime(2024,6,4),
