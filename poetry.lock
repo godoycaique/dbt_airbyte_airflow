@@ -363,6 +363,24 @@ yandex = ["apache-airflow-providers-yandex"]
 zendesk = ["apache-airflow-providers-zendesk"]
 
 [[package]]
+name = "apache-airflow-providers-airbyte"
+version = "3.8.1"
+description = "Provider package apache-airflow-providers-airbyte for Apache Airflow"
+optional = false
+python-versions = "~=3.8"
+files = [
+    {file = "apache_airflow_providers_airbyte-3.8.1-py3-none-any.whl", hash = "sha256:29cfdc82d317139c00267af9829f30046b444610f6a81176db85cf37636a037d"},
+    {file = "apache_airflow_providers_airbyte-3.8.1.tar.gz", hash = "sha256:72db7b2550af2ed28d5ab5053d5a314961b824c254f99a4918a7b1bdf5d454e6"},
+]
+
+[package.dependencies]
+apache-airflow = ">=2.7.0"
+apache-airflow-providers-http = "*"
+
+[package.extras]
+http = ["apache-airflow-providers-http"]
+
+[[package]]
 name = "apache-airflow-providers-common-io"
 version = "1.3.2"
 description = "Provider package apache-airflow-providers-common-io for Apache Airflow"
@@ -3678,4 +3696,4 @@ test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", 
 [metadata]
 lock-version = "2.0"
 python-versions = "==3.11.5"
-content-hash = "68a4cc8f59b150891e9e12bcdcf67397d629c50a9f81e69a93b327891accd66e"
+content-hash = "b10ce09883daa5e4380a060f5bd57353f8b632103a90b3a190fd28f02692fe12"
