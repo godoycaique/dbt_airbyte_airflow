@@ -20,7 +20,7 @@ def running_airbyte():
         endpoint = f'/v1/jobs',
         method = 'POST',
         headers = {
-            "Content-Typé":"application/json",
+            "Content-Type":"application/json",
             "User-Agent": "fake-useragent",
             "Accept": "application/json",
             "Authorization": AIRBYTE_API_KEY
