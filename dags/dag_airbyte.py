@@ -5,8 +5,8 @@ from airflow.models import Variable
 import json
 from datetime import datetime
 
-AIRBYTE_CONNECTION_ID = Variable.get('AIRBYTE_API_TOKEN')
-AIRBYTE_API_KEY = Variable.get('AIRBYTE_GOOGLE_POSTGRES_CONNECTION_ID')
+AIRBYTE_CONNECTION_ID = Variable.get('AIRBYTE_GOOGLE_POSTGRES_CONNECTION_ID')
+AIRBYTE_API_KEY = f'Bearer {Variable.get('AIRBYTE_API_TOKEN')}'
 
 @dag(
     start_date=datetime(2024,6,5), 
