@@ -1,16 +1,21 @@
-# dbt_jornada DBT Core
 
+# Projeto - Modern stack
 
-1 - Criar repositorio e fazer checkout do GIT
-2 - Criar .gitignore
-3 - Criar ambiente virtual
-    a - python -m venv .venv
-    b - source .venv/Scripts/activate
-4 - Criar versoes do python com pyenv
-5 - Criar projeto com Poetry
-    a - poetry init
-    b - poerty env use [version]
-    c - poetry shell
-6 - Git add, commit e push
-6 - airflow (dbtc_BBLBi1ENvI2voLeMATKI4esp8tXBUPl9MhMa0bDn_1MYaViSp4)
-7 - airbyte (eyJhbGciOiJSUzI1NiIsImtpZCI6Ijk4MDIxMzY4LTllZmYtNDY2Ni1iOTYwLTY1ODcyZWMxMTU5ZiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiY2xhazFzdTU5MDAwMDNiNmNqNW1tcWc4dSJdLCJjdXN0b21lcl9pZCI6ImM2MWYxOTZjLWE0NWYtNGE4ZS1hNTg3LTgyMDBlNTBlZjdiZiIsImVtYWlsIjoiY2FpcXVlY2dvZG95QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjoidHJ1ZSIsImV4cCI6MjUzNDAyMjE0NDAwLCJpYXQiOjE3MTc2MTQ0MzgsImlzcyI6Imh0dHBzOi8vYXBwLnNwZWFrZWFzeWFwaS5kZXYvdjEvYXV0aC9vYXV0aC9jbGFrMXN1NTkwMDAwM2I2Y2o1bW1xZzh1IiwianRpIjoiOTgwMjEzNjgtOWVmZi00NjY2LWI5NjAtNjU4NzJlYzExNTlmIiwia2lkIjoiOTgwMjEzNjgtOWVmZi00NjY2LWI5NjAtNjU4NzJlYzExNTlmIiwibmJmIjoxNzE3NjE0Mzc4LCJzcGVha2Vhc3lfY3VzdG9tZXJfaWQiOiI1YWZjZmIxOC1iOTVmLTQ3MTAtYjQwYi1iOTA0Y2UzY2Y4YjQiLCJzcGVha2Vhc3lfd29ya3NwYWNlX2lkIjoiY2xhazFzdTU5MDAwMDNiNmNqNW1tcWc4dSIsInN1YiI6IjVhZmNmYjE4LWI5NWYtNDcxMC1iNDBiLWI5MDRjZTNjZjhiNCIsInVzZXJfaWQiOiI1YWZjZmIxOC1iOTVmLTQ3MTAtYjQwYi1iOTA0Y2UzY2Y4YjQifQ.ZJfo66vRyo0aADAgjPBd8Q1mfYqVblvaYlm16TkTasSpmRmPuvEC02AFEz80f7u_AJilAEke1YBvBo8vB7Hb-k-IpAUGsRr0-BGg5W0qLQLBP3XqZITa_Yx60Nr2O2JS9aIaKJgoH8HgN0LJjt9VR3azFTeUl1QsO-fVl17eG4fW4NlSApquLAnG9CYpUhgFFTiFVS2tii7_ijQKVeZMGj3ur-BLHu8Vym0yxN18laDDBTiAN6URgGtxdUKfDwGiIr07oY3hvA7W-mIDHhRNMhofKdSm7j0rXIjvdIdug-FdPoBRgia6Q1LB73C6qjcdrfjQ0puQdecyL-IEBPkVXg)
+  
+
+Para esse projeto, foi criado uma arquitetura básica de "Modern Stack".
+O projeto consiste basicamente em:
+
+ 1. Coletar dados do **Google Sheets** através do **Airbyte**
+ 2. Levar esses dados até um schema **Bronze** em um banco de dados **Postgres**
+ 3. Realizar uma transformação básica de dados pelo **dbt Cloud**, lendo dados da **Bronze** e criando um novo schema **Gold** e nova tabela com os dados transformados.
+ 4. Realizar a orquestração de todo o processo através do **Airflow**, utilizando uma **DAG** para executar cada step acima.
+ 5. Por trás de tudo isso, foram utilizadas bibliotecas de desenvolvimento como **Poetry**, **Pyenv** e também o **Astro Python SDK** 
+
+Para ilustrar o fluxo:
+
+```mermaid
+graph LR
+A[Google Sheets] -- Airbyte --> B((Postgres Bronze))
+B -- dbt Cloud --> C{Postgres Gold}
+A -- Airflow--> C
